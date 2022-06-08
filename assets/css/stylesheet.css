@@ -6,7 +6,7 @@ body {
     /* background-position: center; */
 }
 
-h1 {
+p {
     color: whitesmoke;
 }
 
@@ -20,12 +20,18 @@ h1 {
     padding-left: 25px;
 }
 
+.city-content {
+    border-bottom: solid 1px;
+    color: whitesmoke;
+    opacity: .3;
+}
+
 .form-control {
     background-color: transparent;
     border: none;
-    border-bottom: solid 3px;
+    border-bottom: solid 2px;
     border-radius: 0;
-    opacity: .5;
+    opacity: .7;
 }
 
 .form-control:focus {
@@ -35,6 +41,7 @@ h1 {
     outline: 0;
     box-shadow: none;
 }
+
 
 #search-btn {
     background-color: #4D736C;
