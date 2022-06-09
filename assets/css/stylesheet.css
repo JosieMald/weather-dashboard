@@ -6,6 +6,11 @@ body {
     /* background-position: center; */
 }
 
+h2 {
+    color: whitesmoke;
+    padding-left: 1rem;
+}
+
 p {
     color: whitesmoke;
 }
@@ -50,3 +55,12 @@ p {
     border-radius: 0;
 }
 
+
+.forecast {
+    color: whitesmoke;
+    opacity: .8;
+}
+
+.ex {
+    border: solid red 2px;
+}
