@@ -12,12 +12,60 @@
       integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
       crossorigin="anonymous"
     />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/stylesheet.css" />
   </head>
   <body>
     <main class="vh-100 w-100 col-12 d-flex justify-content-end p-0">
+      <div class="col-8 position-relative">
+        <div
+          class="col-12 w-75 d-flex position-relative"
+          id="current-weather"
+        >
+          <p class="text-white col-4" id="current-temp">86&#xb0;</p>
+          <div class="col-4 date-content">
+            <div class="position relative">
+              <p class="col-12 text-center" id="current-city">Atlanta</p>
+              <p class="col-12 text-center" id="current-date">
+                Friday, 9 Jun '22
+              </p>
+            </div>
+          </div>
+          <div class="col-4 weather-content position-relative">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-sun text-white col-12"
+              id="weather-icon"
+              width="80"
+              height="80"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <desc>
+                Download more icon variants from https://tabler-icons.io/i/sun
+              </desc>
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <circle cx="12" cy="12" r="4"></circle>
+              <path
+                d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"
+              ></path>
+            </svg>
+            <!-- <p class="col-12 text-center" id="weather-status">Sunny</p> -->
+          </div>
+        </div>
+      </div>
       <div class="col-4 content p-0">
         <div class="input-group col-12 d-flex p-0">
           <div class="col-10 d-flex align-self-end city-search">

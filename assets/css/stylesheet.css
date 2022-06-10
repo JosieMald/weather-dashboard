@@ -1,3 +1,7 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    color: whitesmoke;
+}
 body {
     min-height: 100vh;
     background-image: url('../img/rainy.jpg');
@@ -17,7 +21,7 @@ p {
 
 .content {
     background: rgba(0, 0, 0, 0.5);
-    height: 100vh;
+    min-height: 100vh;
     backdrop-filter: blur(15px);
 }
 
@@ -64,3 +68,39 @@ p {
 .ex {
     border: solid red 2px;
 }
+
+.date-content {
+    
+}
+
+#current-weather {
+    position: absolute;
+    top: 60%;
+    left: 3%;
+}
+
+#current-temp {
+    font-size: 10ch;
+    
+}
+
+#current-city, #current-date {
+    font-size: 4ch;
+    position: absolute;
+    right: 45%;
+    top: 2rem;
+}
+
+#current-date {
+    font-size: 2ch;
+    font-weight: bolder;
+    position: absolute;
+    top: 5rem;
+}
+
+#weather-icon {
+    position: relative;
+    right: 168%;
+    bottom: 50%;
+}
+
