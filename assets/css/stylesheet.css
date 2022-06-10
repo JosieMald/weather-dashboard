@@ -65,8 +65,8 @@ h2 {
 
 #current-weather {
     position: absolute;
-    top: 60%;
-    left: 3%;
+    top: 70%;
+    /* left: 1%; */
 }
 
 #current-temp {
