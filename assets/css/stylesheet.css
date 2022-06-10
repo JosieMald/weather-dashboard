@@ -4,19 +4,12 @@
 }
 body {
     min-height: 100vh;
-    background-image: url('../img/rainy.jpg');
-    /* background-repeat: no-repeat; */
+    background-image: url('/assets/img/rainy.jpg');
     background-size: cover;
-    /* background-position: center; */
 }
 
 h2 {
-    color: whitesmoke;
     padding-left: 1rem;
-}
-
-p {
-    color: whitesmoke;
 }
 
 .content {
@@ -31,7 +24,6 @@ p {
 
 .city-content {
     border-bottom: solid 1px;
-    color: whitesmoke;
     opacity: .3;
 }
 
@@ -44,7 +36,6 @@ p {
 }
 
 .form-control:focus {
-    color: whitesmoke;
     background-color: transparent;
     border-color: whitesmoke;
     outline: 0;
@@ -61,7 +52,6 @@ p {
 
 
 .forecast {
-    color: whitesmoke;
     opacity: .8;
 }
 
