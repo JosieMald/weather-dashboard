@@ -30,20 +30,13 @@
   </head>
   <body>
     <main class="vh-100 w-100 col-12 d-flex justify-content-end p-0">
-      <div class="col-8 position-relative ">
-        <div
-          class="col-12 w-75 d-flex position-relative"
-          id="current-weather"
-        >
+      <div class="col-8 position-relative">
+        <div class="col-12 w-75 d-flex position-relative" id="current-weather">
           <p class="text-white col-4" id="current-temp"></p>
           <div class="col-4 date-content">
             <div class="position relative">
-              <p class="col-12 text-center" id="current-city">
-
-              </p>
-              <p class="col-12 text-center" id="current-date">
-                Friday, 9 Jun '22
-              </p>
+              <p class="col-12 text-center" id="current-city"></p>
+              <p class="col-12 text-center" id="current-date"></p>
             </div>
           </div>
           <div class="col-4 weather-content position-relative">
@@ -78,7 +71,7 @@
           <div class="col-10 d-flex align-self-end city-search">
             <input
               type="text"
-              class="form-control p-0"
+              class="form-control p-0 zipcode"
               placeholder="Enter Zipcode"
             />
           </div>
@@ -294,7 +287,11 @@
         </div>
       </div>
     </main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <script src="./assets/JS/script.js"></script>
   </body>
 </html>

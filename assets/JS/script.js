@@ -3,16 +3,15 @@ var currentWeatherEl = $("#current-weather");
 var currentTempEl = $("#current-temp");
 var currentCityEl = $("#current-city");
 var currentDateEl = $("#current-date");
+var zipcodeEl = $(".zipcode");
 
 
 // VARIABLES --------------------------------------------------------------------------------
 var apiKey = "2524e9bb2b5f261c8205802844842a68";
 var date = moment().format("dddd, D MMMM 'YY");
-console.log(date);
 
 // FUNCTION CALLS ---------------------------------------------------------------------------
-var getGeocoding = function () {
-  var zipcode = "30045";
+var getGeocoding = function (zipcode) {
   var apiUrl =
     "https://api.openweathermap.org/data/2.5/weather?zip=" +
     zipcode +
@@ -30,7 +29,6 @@ var getGeocoding = function () {
     }
   });
 };
-getGeocoding();
 
 var getForecast = function (lon, lat, city) {
   var apiUrl =
@@ -61,10 +59,20 @@ var displayCurrentWeather = function (current, daily, city) {
     currentCityEl.text(city)
     currentDateEl.text(date);
   console.log(current.weather[0].main);
+  getForecast(daily);
   // console.log(daily[0].weather[0].main)
 };
 
 
+
+// EVENT LISTENERS --------------------------------------------------------------------------
+
+$("#search-btn").on("click", function (event){
+  event.preventDefault();
+  console.log('clicked');
+  var zipcode = zipcodeEl.val().trim();
+  getGeocoding(zipcode);
+})
 
 
 
