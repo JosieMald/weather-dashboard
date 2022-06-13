@@ -1,8 +1,16 @@
+// DOM ELEMENTS -----------------------------------------------------------------------------
+var currentWeatherEl = $("#current-weather");
+var currentTempEl = $("#current-temp");
+var currentCityEl = $("#current-city");
+var currentDateEl = $("#current-date");
+
+
+// VARIABLES --------------------------------------------------------------------------------
 var apiKey = "2524e9bb2b5f261c8205802844842a68";
 
 // FUNCTION CALLS ---------------------------------------------------------------------------
 var getGeocoding = function () {
-  var zipcode = "30052";
+  var zipcode = "30019";
   var apiUrl =
     "https://api.openweathermap.org/data/2.5/weather?zip=" +
     zipcode +
@@ -46,11 +54,19 @@ var getForecast = function (lon, lat, city) {
 };
 
 var displayCurrentWeather = function (current, daily, city) {
-    var currentTemp = Math.floor(current.temp)
+    var currentTemp = Math.floor(current.temp);
+    currentTempEl.text(currentTemp + `\u00B0`);
+    currentCityEl.text(city)
   console.log(city);
   console.log(currentTemp);
   console.log(current.weather[0].description);
 };
+
+
+
+
+
+
 
 // var getForecast = function (lon, lat) {
 //     // use api url below to make one api call for the current weather and forecast.
