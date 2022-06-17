@@ -14,7 +14,9 @@ let paths;
 let bypass = false;
 let counter = 0;
 let forecastArray = [];
-let dailyWeather; 
+let dailyWeather;
+let day = moment().isoWeekday();
+let fiveDays = moment().isoWeekday(day);
 
 // FUNCTION CALLS ---------------------------------------------------------------------------
 var getGeocoding = function (zipcode) {
@@ -30,6 +32,7 @@ var getGeocoding = function (zipcode) {
         var lon = data.coord.lon;
         var lat = data.coord.lat;
         var city = data.name;
+        zipcodeEl.val("");
         getForecast(lon, lat, city);
       });
     }
@@ -140,13 +143,20 @@ var displayCurrentWeather = function (current, city) {
   svgSwitchStatement();
 };
 
-var displayForecast = function (daily) {
+var displayForecast = function () {
   for (var i = 0; i < 5; i++) {
     var maxTemp = Math.floor(dailyWeather[i].temp.max);
     var minTemp = Math.floor(dailyWeather[i].temp.min);
+    day++;
+    if (day == 7) {
+      day = 0;
+    }
+    let weekday = fiveDays._locale._weekdays[day];
     $(".forecast").append(
       "<div class='my-4 d-flex col-12 p-0'>" +
-        "<p class='col-3'>Thursday</p>" +
+        "<p class='col-3'>" +
+        weekday +
+        "</p>" +
         "<svg xmlns='http://www.w3.org/2000/svg'" +
         "class='icon icon-tabler icon-tabler-" +
         forecastArray[i].class +
@@ -176,7 +186,14 @@ var displayForecast = function (daily) {
 
 $("#search-btn").on("click", function (event) {
   event.preventDefault();
-  console.log("clicked");
+  if (bypass === true) {
+    $(".forecast").text("");
+    $(".date-content").text("");
+    $("#weather-icon").remove();
+    console.log("clicked");
+    bypass = false;
+  }
+
   var zipcode = zipcodeEl.val().trim();
   getGeocoding(zipcode);
 });
