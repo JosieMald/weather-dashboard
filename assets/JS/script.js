@@ -68,8 +68,11 @@ var searchedCities = function (current, city) {
   for (var i = 0; i < citiesArray.length; i++) {
     $(".city-content").append(
       "<div class='my-2'> <p>",citiesArray[i],"</p> </div>"
-    );
-  }
+      );
+    }
+    if (citiesArray.length === 5) {
+      citiesArray.splice(4, 1);
+    }
   svgSwitchStatement(current, city);
 };
 
