@@ -189,6 +189,7 @@ $("#search-btn").on("click", function (event) {
   if (bypass === true) {
     // debugger;
     forecastArray = [];
+    day = moment().isoWeekday();
     $("svg").remove(".day-icons");
     $(".forecast").text("");
     console.log("clicked");
