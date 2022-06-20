@@ -126,7 +126,7 @@ var displayCurrentWeather = function (current, city) {
   currentDateEl.text(date);
   $(".weather-content").append(
     "<svg xmlns='http://www.w3.org/2000/svg'" +
-      "class='icon icon-tabler icon-tabler-" +
+      "class='day-icons icon icon-tabler icon-tabler-" +
       weather +
       " text-white col-12' id='weather-icon' " +
       "width='80' height='80' viewBox='0 0 24 24'" +
@@ -158,7 +158,7 @@ var displayForecast = function () {
         weekday +
         "</p>" +
         "<svg xmlns='http://www.w3.org/2000/svg'" +
-        "class='icon icon-tabler icon-tabler-" +
+        "class='day-icons icon icon-tabler icon-tabler-" +
         forecastArray[i].class +
         " col-5'" +
         "width='40' height='40' viewBox='0 0 24 24'" +
@@ -187,9 +187,10 @@ var displayForecast = function () {
 $("#search-btn").on("click", function (event) {
   event.preventDefault();
   if (bypass === true) {
+    // debugger;
+    forecastArray = [];
+    $("svg").remove(".day-icons");
     $(".forecast").text("");
-    $(".date-content").text("");
-    $("#weather-icon").remove();
     console.log("clicked");
     bypass = false;
   }
