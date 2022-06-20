@@ -51,16 +51,16 @@ h2 {
 }
 
 
-.forecast {
-    /* opacity: .8; */
+.forecast div {
+    margin: 14px 0;
 }
 
 .ex {
     border: solid red 2px;
 }
 
-.date-content {
-    
+.city-content {
+    height: 215px;
 }
 
 #current-weather {
@@ -93,4 +93,5 @@ h2 {
     right: 156%;
     bottom: 50%;
 }
+
 

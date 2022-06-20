@@ -17,6 +17,7 @@ let forecastArray = [];
 let dailyWeather;
 let day = moment().isoWeekday();
 let fiveDays = moment().isoWeekday(day);
+let citiesArray = [];
 
 // FUNCTION CALLS ---------------------------------------------------------------------------
 var getGeocoding = function (zipcode) {
@@ -54,10 +55,22 @@ var getForecast = function (lon, lat, city) {
         var current = data.current;
         dailyWeather = data.daily;
         weatherDesc = current.weather[0].main;
-        svgSwitchStatement(current, city);
+        searchedCities(current, city);
       });
     }
   });
+};
+
+var searchedCities = function (current, city) {
+  if (citiesArray.includes(city) == false){
+    citiesArray.unshift(city);
+  }
+  for (var i = 0; i < citiesArray.length; i++) {
+    $(".city-content").append(
+      "<div class='my-2'> <p>",citiesArray[i],"</p> </div>"
+    );
+  }
+  svgSwitchStatement(current, city);
 };
 
 var svgSwitchStatement = function (current, city) {
@@ -153,7 +166,7 @@ var displayForecast = function () {
     }
     let weekday = fiveDays._locale._weekdays[day];
     $(".forecast").append(
-      "<div class='my-4 d-flex col-12 p-0'>" +
+      "<div class='d-flex col-12 p-0 my-4'>" +
         "<p class='col-3'>" +
         weekday +
         "</p>" +
@@ -189,6 +202,7 @@ $("#search-btn").on("click", function (event) {
   if (bypass === true) {
     // debugger;
     forecastArray = [];
+    $(".city-content").text('');
     day = moment().isoWeekday();
     $("svg").remove(".day-icons");
     $(".forecast").text("");
